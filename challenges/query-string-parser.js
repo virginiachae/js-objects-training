@@ -57,10 +57,10 @@ var parseQueryString = function(str) {
     return obj
   } else {
   var keyValue = str.split('&');
-  for (var i = 0; i < keyValue.length; i++) {
-    var key = keyValue[i].split('=')
-    obj[key[0]] = key[1]
-  }
+    for (var i = 0; i < keyValue.length; i++) {
+      var key = keyValue[i].split('=')
+      obj[key[0]] = key[1]
+    }
   return obj;
-}
+  }
 };

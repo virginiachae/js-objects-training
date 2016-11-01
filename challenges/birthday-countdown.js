@@ -34,3 +34,37 @@
 */
 
 // YOUR CODE HERE
+
+// //birthdayReminder([
+//   {
+//     name: "Jack",
+//     dob: "10/31/2013"
+//   },
+//   {
+//     name: "Jill",
+//     dob: "4/01/1975"
+//   }
+// ]);
+//
+// //=> [
+// //      "Jack's birthday is in 75 days",
+// //      "Jill's birthday is in 305 days"
+// //    ]
+function daysUntilDate(string) {
+  var date = Date.parse(string);
+  console.log(date)
+  var today = Date.now();
+  console.log(today);
+  return ((date - today)/(1000*60*60*24));
+}
+
+
+var birthdayReminder = function(arrOfObj) {
+  var arrOfStr = [];
+  for (var i = 0; i < arrOfObj.length; i++) {
+    var name = arrOfObj[i].name;
+    var bday = arrOfObj[i].dob;
+    arrOfStr.push(name + "'s birthday is in " + bday + " days");
+  }
+ return arrOfStr;
+}

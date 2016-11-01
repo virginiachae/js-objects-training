@@ -68,13 +68,11 @@ var letterCount = function(word) {
   var obj = {};
   var arr = word.split('') // ['a','p','p','l','e']
   for (var i = 0; i < arr.length; i++) {
-     obj[arr[i]] = 0
-    for (var j =0; j<Object.keys(obj).length; j++){
-      if(word[i] === Object.keys(obj)[j]) {
-        obj[arr[i]] = obj[arr[i]] + 1;
-      }
-    }
-
+     if(obj[arr[i]] === undefined) {
+       obj[arr[i]] = 1;
+     } else {
+       obj[arr[i]] += 1;
+     }
     }
      return obj;
    }
