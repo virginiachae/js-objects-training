@@ -37,7 +37,7 @@
   Mega Bonus
   - Can you create the reverse function? Given an object, output a Query Parameter String:
 
-    ``` javascript
+    ``` javascript(&)
     var o = {first: "alpha", last: "omega"};
     convertToQueryParameter(o); // "first=alpha&last=omega";
     ```
@@ -45,3 +45,22 @@
 */
 
 // YOUR CODE HERE
+//parseQueryString("first=alpha&last=omega");
+//=> {
+//    "first": "alpha",
+//    "last": "omega"
+//   }
+
+var parseQueryString = function(str) {
+  var obj = {}
+  if (str === ""){
+    return obj
+  } else {
+  var keyValue = str.split('&');
+  for (var i = 0; i < keyValue.length; i++) {
+    var key = keyValue[i].split('=')
+    obj[key[0]] = key[1]
+  }
+  return obj;
+}
+};

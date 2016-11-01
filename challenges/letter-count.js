@@ -31,3 +31,50 @@
 */
 
 // YOUR CODE HERE
+
+var letterCount = function(word) {
+  var obj = {};
+  var arr = word.split('') // ['a','p','p','l','e']
+  var nonRepeats = [];
+  for (var i = 0; i < word.length; i++) {
+    if(nonRepeats.indexOf(word[i]) === -1) {
+     nonRepeats.push(word[i]);
+     obj[word[i]] = 1
+   }
+
+ }
+  for(i=0; i<nonRepeats.length; i++){
+    obj[word[i]] = 1;
+   }
+  return obj;
+}
+
+
+
+// much simpler
+
+var letterCount = function(word) {
+  var obj = {};
+  var arr = word.split('') // ['a','p','p','l','e']
+  for (var i = 0; i < arr.length; i++) {
+   obj[arr[i]] = num;
+   }
+   return obj;
+   }
+
+//not done yet
+
+var letterCount = function(word) {
+  var obj = {};
+  var arr = word.split('') // ['a','p','p','l','e']
+  for (var i = 0; i < arr.length; i++) {
+     obj[arr[i]] = 0
+    for (var j =0; j<Object.keys(obj).length; j++){
+      if(word[i] === Object.keys(obj)[j]) {
+        obj[arr[i]] = obj[arr[i]] + 1;
+      }
+    }
+
+    }
+     return obj;
+   }
